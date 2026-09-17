@@ -1,4 +1,5 @@
 import { useTranslation } from "react-i18next";
+import { Link } from "react-router";
 
 export function meta(/* {}: Route.MetaArgs */) {
   return [
@@ -7,12 +8,12 @@ export function meta(/* {}: Route.MetaArgs */) {
   ];
 }
 
-export default function Home() {
+export default function IndexPage() {
   const { t } = useTranslation();
 
   return (
     <div>
-      <p>{t("title")}</p>
+      <Link to="/bouquet-royal">Bouquet royal</Link>
     </div>
   );
 }
