@@ -9,7 +9,7 @@
       },
       "correctness": {
         "noUnusedImports": {
-          "level":"error",
+          "level": "error",
           "fix": "safe"
         }
       },
@@ -57,6 +57,7 @@
     "formatter": {}
   },
   "css": {
+    "parser": { "tailwindDirectives": true },
     "formatter": {}
   }
 }

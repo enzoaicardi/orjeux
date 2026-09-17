@@ -1,6 +1,6 @@
-import type { Route } from "./+types/home";
+import { useTranslation } from "react-i18next";
 
-export function meta({}: Route.MetaArgs) {
+export function meta(/* {}: Route.MetaArgs */) {
   return [
     { title: "New React Router App" },
     { name: "description", content: "Welcome to React Router!" },
@@ -8,5 +8,11 @@ export function meta({}: Route.MetaArgs) {
 }
 
 export default function Home() {
-  return <div><p>welcome home</p></div>;
+  const { t } = useTranslation();
+
+  return (
+    <div>
+      <p>{t("title")}</p>
+    </div>
+  );
 }
