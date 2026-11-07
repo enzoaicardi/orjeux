@@ -10,6 +10,10 @@ export function FlowerCombinationsCard({
 }: FlowerCombinationsCardProps) {
   return (
     <div className={cn("flex w-full flex-col gap-4", className)} {...props}>
+      <div className="under flex w-full justify-between font-semibold text-gray-500 text-xs">
+        <p>Valeur</p>
+        <p>Bonus</p>
+      </div>
       <FlowerCombinationCard
         values={[12, 12]}
         name="Paires"

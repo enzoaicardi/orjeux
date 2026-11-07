@@ -6,21 +6,22 @@ import { Button } from "~/components/ui/button";
 import {
   Dialog,
   DialogContent,
+  DialogFooter,
   DialogHeader,
   DialogTitle,
   DialogTrigger,
 } from "~/components/ui/dialog";
 
-export type PlayerPointsCardProps = ComponentProps<"div"> & {
+export type PlayerPointsModalProps = ComponentProps<"div"> & {
   name: string;
   points?: number;
 };
 
-export function PlayerPointsCard({
+export function PlayerPointsModal({
   name,
   points,
   ...props
-}: PlayerPointsCardProps) {
+}: PlayerPointsModalProps) {
   return (
     <Dialog>
       <DialogTrigger
@@ -30,15 +31,17 @@ export function PlayerPointsCard({
         <DialogHeader>
           <DialogTitle>Combinaisons</DialogTitle>
         </DialogHeader>
-        <FlowerCombinationsCard />
-        <div className="flex gap-2">
+        <div className="min-h-0 flex-1 overflow-y-auto overscroll-contain">
+          <FlowerCombinationsCard />
+        </div>
+        <DialogFooter className="flex flex-row gap-2">
           <Button className="flex-1" size="lg" variant="secondary">
             Saisir manuellement
           </Button>
           <Button className="flex-1" size="lg" variant="outline">
-            Editer de profil
+            Editer le profil
           </Button>
-        </div>
+        </DialogFooter>
       </DialogContent>
     </Dialog>
   );
@@ -49,7 +52,7 @@ export function PlayerPointsTrigger({
   points,
   className,
   ...props
-}: PlayerPointsCardProps) {
+}: PlayerPointsModalProps) {
   return (
     <div
       className={cn(
